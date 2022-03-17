@@ -6,17 +6,17 @@
             {
                 "title": "Fashionopolis",
                 "author": "Dana Thomas",
-                "image": ""
+                "image": "require(' ')"
             },
             {
                 "title": "Chanel",
                 "author": "Patrick Mauriès",
-                "image": ""
+                "image": "require(' ')"
             },
             {
                 "title": "Calligraphy",
                 "author": "June & Lucy",
-                "image": ""
+                "image": "require(' ')"
             }
         ]
     },
@@ -27,19 +27,19 @@
             {
                 "title": "Yves Saint Laurent",
                 "author": "Suzy Menkes ",
-                "image": "",
+                "image": "require(' ')",
                 "star_rating": 4
             },
             {
                 "title": "The Book of Signs",
                 "author": "Rudolf Koch ",
-                "image": "",
+                "image": "require(' ')",
                 "star_rating": 3
             },
             {
                 "title": "Stitched Up",
                 "author": "Tansy E. Hoskins",
-                "image": "",
+                "image": "require(' ')",
                 "star_rating": 3
             }
         ]
