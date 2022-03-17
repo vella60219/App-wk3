@@ -2,6 +2,7 @@
     {
         "title": "Popular Books",
         "horizontal": "true",
+        "star_rate": 0,
         "data": [
             {
                 "title": "Fashionopolis",
@@ -23,6 +24,7 @@
     {
         "title": "Newest",
         "horizontal": "true",
+        "star_rate": 1,
         "data": [
             {
                 "title": "Yves Saint Laurent",

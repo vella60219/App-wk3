@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, Image} from "react-native";
 import StarRating from 'react-native-star-rating';
 
-const BookDetail = props => {
+const NewestDetail = props => {
     let { book } = props;
     return(
         <View style={{flexDirection: 'column'}}> 
@@ -56,4 +56,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default BookDetail;
+export default NewestDetail;
