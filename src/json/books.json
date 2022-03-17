@@ -6,17 +6,17 @@
             {
                 "title": "Fashionopolis",
                 "author": "Dana Thomas",
-                "image": "require(' ')"
+                "image": "https://raw.githubusercontent.com/vella60219/App-wk3/master/src/img/img_book_fashinopolis.png"
             },
             {
                 "title": "Chanel",
                 "author": "Patrick Mauriès",
-                "image": "require(' ')"
+                "image": "https://raw.githubusercontent.com/vella60219/App-wk3/master/src/img/img_book_chanel.png"
             },
             {
                 "title": "Calligraphy",
                 "author": "June & Lucy",
-                "image": "require(' ')"
+                "image": "https://raw.githubusercontent.com/vella60219/App-wk3/master/src/img/img_book_calligraphy.png"
             }
         ]
     },
@@ -27,19 +27,19 @@
             {
                 "title": "Yves Saint Laurent",
                 "author": "Suzy Menkes ",
-                "image": "require(' ')",
+                "image": "https://raw.githubusercontent.com/vella60219/App-wk3/master/src/img/img_book_ysl.png",
                 "star_rating": 4
             },
             {
                 "title": "The Book of Signs",
                 "author": "Rudolf Koch ",
-                "image": "require(' ')",
+                "image": "https://raw.githubusercontent.com/vella60219/App-wk3/master/src/img/img_book_tbos.png",
                 "star_rating": 3
             },
             {
                 "title": "Stitched Up",
                 "author": "Tansy E. Hoskins",
-                "image": "require(' ')",
+                "image": "https://raw.githubusercontent.com/vella60219/App-wk3/master/src/img/img_book_stitchedup.png",
                 "star_rating": 3
             }
         ]

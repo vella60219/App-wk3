@@ -9,7 +9,7 @@ const BookDetail = props => {
             <View style={styles.cardContainer}> 
                 <Image
                     style={styles.image} 
-                    source={book.image}
+                    source={{uri: book.image}}
                 />
                   <StarRating
                     disabled={true}

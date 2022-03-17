@@ -8,7 +8,7 @@ const BookDetail = props => {
             <View style={styles.cardContainer}> 
                 <Image
                     style={styles.image} 
-                    source={book.image}
+                    source={{uri: book.image}}
                 />
                 <View style={styles.textBox}>
                     <Text style={styles.titleText}>{book.title}</Text>
