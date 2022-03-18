@@ -1,12 +1,13 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, Pressable} from "react-native";
 
-const BookDetail = props => {
-    let { book } = props;
+const BookDetail = ({ book, navigation }) => {
     return(
         <View style={{flexDirection: 'column'}}> 
             <View style={styles.cardContainer}> 
-                <Pressable>
+                <Pressable
+                    onPress={() => navigation.navigate('Detail', book)}
+                >
                     <Image
                         style={styles.image} 
                         source={{uri: book.image}}

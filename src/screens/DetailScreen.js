@@ -1,9 +1,11 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 
-const DetailScreen = ({ navigation }) => {
+const DetailScreen = ({ route }) => {
     return(
         <View style={{flex: 1}}>
+
+            <Text>{route.params.title}</Text>
 
         </View>
     );
