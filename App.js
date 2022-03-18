@@ -6,7 +6,7 @@ import BookList from "./src/components/BookList";
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={{flex: 1}}>
       <StatusBar style="auto" />
 
       <BookList/>
@@ -17,13 +17,4 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    color: '#131313',
-  },
 
-  
-
-});
