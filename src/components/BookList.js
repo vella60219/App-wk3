@@ -67,3 +67,6 @@ const styles = StyleSheet.create({
 });
 
 export default BookList;
+
+
+//memo：Detail其實應該不用分兩個做，做一個，然後星星部分用判斷有沒有star_rating來決定渲染的方式就可以了（沒有驗證）
