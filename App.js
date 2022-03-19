@@ -1,29 +1,28 @@
 import React from "react";
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, StyleSheet, SectionList, Text, View, Image } from 'react-native';
-import BookList from "./src/components/BookList";
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import BookScreen from "./src/screens/BookScreen";
+import DetailScreen from "./src/screens/DetailScreen";
+
+const Stack = createNativeStackNavigator();
 
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar style="auto" />
+    <NavigationContainer>
+      <Stack.Navigator>
 
-      <BookList/>
+        <Stack.Screen name="Home" component={BookScreen} />
+        <Stack.Screen name="Detail" component={DetailScreen} />
 
-     
 
-    </SafeAreaView>
+    </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    color: '#131313',
-  },
 
-  
-
-});

@@ -1,17 +1,20 @@
 import React from "react";
-import { StyleSheet, Text, View, Image} from "react-native";
+import { StyleSheet, Text, View, Image, Pressable} from "react-native";
 import StarRating from 'react-native-star-rating';
 
-const NewestDetail = props => {
-    let { book } = props;
+const NewestDetail = ({ book, navigation })  => {
     return(
         <View style={{flexDirection: 'column'}}> 
             <View style={styles.cardContainer}> 
-                <Image
+                <Pressable
+                    onPress={() => navigation.navigate('Detail', book)}
+                >
+                    <Image
                     style={styles.image} 
                     source={{uri: book.image}}
-                />
-                  <StarRating
+                    />
+                </Pressable>
+                <StarRating
                     disabled={true}
                     maxStars={5}
                     rating={book.star_rating}
@@ -21,7 +24,7 @@ const NewestDetail = props => {
                     starSize={14}
                     containerStyle={{justifyContent: "flex-start", marginBottom: 8.5}}
                     starStyle={{marginRight: 4}}
-                    />
+                />
                 <View style={styles.textBox}>
                     <Text style={styles.titleText}>{book.title}</Text>
                     <Text style={styles.authorText}>{book.author}</Text>

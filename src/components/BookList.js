@@ -5,7 +5,7 @@ import PopularBookDetail from "./PopularBookDetail";
 import NewestDetail from "./NewestDetail";
 import sections from "../json/books.json";
 
-const BookList = () => {
+const BookList = ({ navigation }) => {
 
     
 
@@ -17,7 +17,7 @@ const BookList = () => {
                         <FlatList
                             horizontal={true}
                             data={section.data}
-                            renderItem={({ item }) => <NewestDetail book={item} />}
+                            renderItem={({ item }) => <NewestDetail book={item} navigation={navigation} />}
                             showsHorizontalScrollIndicator={false}
                             keyExtractor={ item => item.title }
                         />
@@ -25,7 +25,7 @@ const BookList = () => {
                         <FlatList
                             horizontal={true}
                             data={section.data}
-                            renderItem={({ item }) => <PopularBookDetail book={item} />}
+                            renderItem={({ item }) => <PopularBookDetail book={item} navigation={navigation} />}
                             showsHorizontalScrollIndicator={false}
                             keyExtractor={ item => item.title }
                         />
@@ -67,3 +67,6 @@ const styles = StyleSheet.create({
 });
 
 export default BookList;
+
+
+//memo：Detail其實應該不用分兩個做，做一個，然後星星部分用判斷有沒有star_rating來決定渲染的方式就可以了（沒有驗證）
