@@ -1,17 +1,21 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, Pressable} from "react-native";
+import { Box, Text, Image, Pressable } from "native-base";
+
 import StarRating from 'react-native-star-rating';
 
 const NewestDetail = ({ book, navigation })  => {
     return(
-        <View style={{flexDirection: 'column'}}> 
-            <View style={styles.cardContainer}> 
+        <Box flexDirection='column' > 
+            <Box m='8px' > 
                 <Pressable
                     onPress={() => navigation.navigate('Detail', book)}
+                        shadow= {2}
                 >
                     <Image
-                    style={styles.image} 
+                    h='200' w='140'
+                    mb='16px'
                     source={{uri: book.image}}
+                    alt={book.title}
                     />
                 </Pressable>
                 {book.star_rating ? (
@@ -27,38 +31,24 @@ const NewestDetail = ({ book, navigation })  => {
                         starStyle={{marginRight: 4}}
                     />) : null
                 }
-                <View style={styles.textBox}>
-                    <Text style={styles.titleText}>{book.title}</Text>
-                    <Text style={styles.authorText}>{book.author}</Text>
-                </View>
-            </View>
-        </View>
+                <Box w='140px' >
+                    <Text
+                        fontSize='16'
+                        fontWeight='500'
+                        lineHeight='18px'
+                        letterSpacing='0'
+                        marginBottom='8px'
+                    >{book.title}</Text>
+                    <Text
+                        fontSize='12'
+                        fontWeight='400'
+                        color='rgba(19, 19, 19, 0.5)'
+                    >{book.author}</Text>
+                </Box>
+            </Box>
+        </Box>
     )
 };
 
-const styles = StyleSheet.create({
-    cardContainer: {
-        margin: 16,
-    },
-    image: {
-        height: 200,
-        width: 140,
-        marginBottom: 16,
-    },
-    textBox: {
-        width: 140,
-    },
-    titleText: {
-        fontSize: 16,
-        fontWeight: '500',
-        letterSpacing: 1.2,
-        marginBottom: 8,
-    },
-    authorText: {
-        fontSize: 12,
-        fontWeight: '400',
-        color: 'rgba(19, 19, 19, 0.5)',
-    }
-});
 
 export default NewestDetail;

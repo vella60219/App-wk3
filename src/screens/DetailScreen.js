@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Flex, Text, Center, Image, Button } from "native-base";
 
-import { StyleSheet } from "react-native";
 import StarRating from 'react-native-star-rating';
 
 const DetailScreen = ({ route }) => {
@@ -19,7 +18,13 @@ var buttonText = `BUY NOW FOR ${price}`
 
     return(
         <Flex flex={1} alignItems='center' bg='#fff' >
-            <Box mt="8" mb="28" shadow="3" >
+            <Box
+                mt="8px" mb="28px" 
+                shadowColor= '#414144'
+                shadowOpacity= '0.1'
+                shadowRadius= '32'
+                //shadow={3}
+            >
                 <Image
                     h="300" w='210'
                     source={{uri: image}}
@@ -63,7 +68,7 @@ var buttonText = `BUY NOW FOR ${price}`
                         <Flex
                             flexDirection="row"
                             justifyContent='center'
-                            marginLeft='2'
+                            marginLeft='8px'
                         >
                             <Text
                                 fontSize='14'
@@ -82,7 +87,7 @@ var buttonText = `BUY NOW FOR ${price}`
                 }
 
             </Box>
-            <Box w='100%' px='12' mb='28' mt='17'>
+            <Box w='100%' px='12' mb='28' mt='16px'>
                 <Text
                     fontSize='14'
                     fontWeight='400'

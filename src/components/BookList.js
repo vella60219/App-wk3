@@ -1,7 +1,7 @@
 import React from "react";
-import { Box } from "native-base";
+import { Box, Text } from "native-base";
+import { FlatList, SectionList } from "react-native";
 
-import { Text, View, FlatList, SectionList, StyleSheet } from "react-native";
 import BookDetail from "./BookDetail";
 import sections from "../json/books.json";
 
@@ -9,16 +9,22 @@ const BookList = ({ navigation }) => {
     
     const renderSectionHeader = ({section}) => (
         <>
-            <Text style={styles.sectionHeader}>{section.title}</Text>
-            <View style={styles.sectionBox}>
+            <Text
+                fontSize='24'
+                fontWeight='500'
+                letterSpacing='0.3'
+                marginLeft='20px'
+            >{section.title}</Text>
+            <Box>
                 <FlatList
                     horizontal={true}
                     data={section.data}
                     renderItem={({ item }) => <BookDetail book={item} navigation={navigation} />}
                     showsHorizontalScrollIndicator={false}
                     keyExtractor={ item => item.title }
+                    contentContainerStyle={{paddingLeft: 15, paddingRight: 15}}
                 />
-            </View>
+            </Box>
         </>
     );
 
@@ -38,19 +44,5 @@ const BookList = ({ navigation }) => {
         />
     );
 };
-
-const styles = StyleSheet.create({
-    sectionHeader: {
-        fontSize: 24,
-        fontWeight: '500',
-        letterSpacing: 0.3,
-        
-        marginLeft: 20,
-    },
-    sectionBox: {
-        marginLeft: 4,
-        marginRight: 4,
-    },
-});
 
 export default BookList;
