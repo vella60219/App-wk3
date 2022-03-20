@@ -14,6 +14,7 @@ const BookList = ({ navigation }) => {
                 fontWeight='500'
                 letterSpacing='0.3'
                 marginLeft='20px'
+
             >{section.title}</Text>
             <Box>
                 <FlatList
@@ -22,7 +23,7 @@ const BookList = ({ navigation }) => {
                     renderItem={({ item }) => <BookDetail book={item} navigation={navigation} />}
                     showsHorizontalScrollIndicator={false}
                     keyExtractor={ item => item.title }
-                    contentContainerStyle={{paddingLeft: 15, paddingRight: 15}}
+                    contentContainerStyle={{paddingTop: 8, paddingLeft: 15, paddingRight: 15}}
                 />
             </Box>
         </>
