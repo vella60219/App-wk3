@@ -1,4 +1,5 @@
 import React from "react";
+import { Box } from "native-base";
 
 import { Text, View, FlatList, SectionList, StyleSheet } from "react-native";
 import PopularBookDetail from "./PopularBookDetail";
