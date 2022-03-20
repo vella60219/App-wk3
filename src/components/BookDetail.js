@@ -14,17 +14,19 @@ const NewestDetail = ({ book, navigation })  => {
                     source={{uri: book.image}}
                     />
                 </Pressable>
-                <StarRating
-                    disabled={true}
-                    maxStars={5}
-                    rating={book.star_rating}
-                    fullStarColor={'#FFC41F'}
-                    emptyStar = {"star"}
-                    emptyStarColor={'#EDEDEF'}
-                    starSize={14}
-                    containerStyle={{justifyContent: "flex-start", marginBottom: 8.5}}
-                    starStyle={{marginRight: 4}}
-                />
+                {book.star_rating ? (
+                    <StarRating
+                        disabled={true}
+                        maxStars={5}
+                        rating={book.star_rating}
+                        fullStarColor={'#FFC41F'}
+                        emptyStar = {"star"}
+                        emptyStarColor={'#EDEDEF'}
+                        starSize={14}
+                        containerStyle={{justifyContent: "flex-start", marginBottom: 8.5}}
+                        starStyle={{marginRight: 4}}
+                    />) : null
+                }
                 <View style={styles.textBox}>
                     <Text style={styles.titleText}>{book.title}</Text>
                     <Text style={styles.authorText}>{book.author}</Text>
