@@ -1,12 +1,13 @@
 import React from "react";
-import { View } from "react-native";
+import { Flex } from "native-base";
+
 import BookList from "../components/BookList";
 
 const BookScreen = ({ navigation }) => {
     return(
-        <View style={{flex: 1, backgroundColor: '#fff'}}>
-            <BookList  navigation={navigation} />
-        </View>
+        <Flex flex={1} bg='#fff' >
+            <BookList navigation={navigation} />
+        </Flex>
     );
 
 };

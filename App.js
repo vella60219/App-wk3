@@ -1,13 +1,19 @@
 import React from "react";
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, SectionList, Text, View, Image } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { NativeBaseProvider } from 'native-base';
 
 import Navigation from "./src/navigation";
 
 
 export default function App() {
   return (
-    <Navigation />
+    <SafeAreaProvider>
+      <SafeAreaView style={{ flex: 1 }}>
+        <NativeBaseProvider>
+          <Navigation/>
+        </NativeBaseProvider>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
