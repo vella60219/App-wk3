@@ -33,8 +33,8 @@ const MyTabs = () => {
         screenOptions={{
             tabBarActiveTintColor: '#6200EE',
             tabBarInactiveTintColor: '#666666',
+            headerShown: false,
           // headerShown: false
-
             tabBarLabelStyle: {
                 fontWeight: '500',
                 fontSize: 12,
@@ -43,6 +43,14 @@ const MyTabs = () => {
             tabBarIconStyle: {
                 marginTop: 11,
             },
+            headerStyle: { 
+                headerShadowVisible: false,
+                        shadowColor: 'transparent',
+                        elevation: 0,
+                        shadowOpacity: 0,
+                        shadowOffset:{height: 0, width: 0},
+                        borderBottomColor: 'transparent',
+              },
         }}
       >
         <Tab.Screen 
@@ -60,6 +68,7 @@ const MyTabs = () => {
           name="WishlistStack" 
           component={WishlistScreen} 
           options={{
+            headerShown: false,
             title: "Wishlist",
             headerTitleStyle: {
               fontWeight: '400',
@@ -74,6 +83,7 @@ const MyTabs = () => {
           name="MyBooksStack" 
           component={MyBooksScreen} 
           options={{
+            headerShown: false,
             title: "My books",
             headerTitleStyle: {
               fontWeight: '400',
@@ -142,8 +152,35 @@ const HomeStack = () => {
                 name="Home"
                 component={BookScreen}
                 options={{
+                    
+                    headerShadowVisible:false,
                     title: null,
+                    headerStyle:{
+                        elevation: 0,
+                        shadowOpacity: 0,
+                        shadowOffset:{height: 0, width: 0},
+                    },
+                    // searchBar: 0,
+                    // headerSearchBarOptions: {
+                    //     autoCapitalize: 'none',
+                    //     obscureBackground: false,
+                    //     onCancelButtonPress: false,
+                    //     hideWhenScrolling: true,
+                    //   },
+                    headerLeft: () => (
+                        <MaterialCommunityIcons
+                          name={'menu'}
+                          size={24}
+                        />
+                      ),
+                      headerRight: () => (
+                        <MaterialCommunityIcons
+                          name={'magnify'}
+                          size={24}
+                        />
+                      ),
                 }}
+                
             />
             <Stack.Screen
                 name="Detail"
