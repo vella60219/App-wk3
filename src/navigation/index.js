@@ -1,13 +1,13 @@
 import React from "react";
-import StarRating from 'react-native-star-rating';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import ActionButton from 'react-native-action-button';
+import BookMarkButton from "../components/BookMarkButton";
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import BookScreen from "../screens/BookScreen";
 import DetailScreen from "../screens/DetailScreen";
@@ -98,53 +98,6 @@ const MyTabs = () => {
     );
   }
 
-
-  const onStarRatingPress =(rating) => {
-    if (rating) {
-        rating =0;
-    } else {
-        rating = 1
-    }
-  }
-
-  class GeneralStarExample extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          starCount: 0
-        };
-      }
-    
-      onStarRatingPress() {
-        if (this.state.starCount) {
-            this.state.starCount =0;
-        } else {
-            this.state.starCount = 1
-        }
-      }
-    
-      render() {
-        return (
-          <StarRating
-            disabled={false}
-            iconSet={"bookmark"}
-            maxStars={1}
-            starSize={14}
-            rating={this.state.starCount}
-            selectedStar={(rating) => this.onStarRatingPress()}
-          />
-        );
-      }
-    // return(
-    //     <StarRating
-    //     disabled={false}
-    //     maxStars={1}
-    //     iconSet={"bookmark"}
-    //     starSize={14}
-    //     />
-    // );
-};
-
 const HomeStack = () => {
     return (
           <Stack.Navigator>
@@ -186,51 +139,32 @@ const HomeStack = () => {
                 name="Detail"
                 component={DetailScreen}
                 options={{
-                    
-
                     title: null,
                     headerBackTitleVisible: false,
                     headerShadowVisible:false,
-                    //headerBackImage : "../img/icon_back",
                     headerTintColor: '#131313',
                     headerStyle:{
                         elevation: 0,
                         shadowOpacity: 0,
                         shadowOffset:0,
-                      
+                        
                     },
-                    headerRight:() => (
-                        // <GeneralStarExample/>
-                        // <ActionButton
-                        //     renderIcon={(active) => (
-                        //         active ? (
-                        //             <MaterialCommunityIcons name="bookmark" color={'#131313'} size={18} />
-                        //         ) : (
-                        //             <MaterialCommunityIcons name="bookmark-outline" color={'#131313'} size={18} />
-                        //         )
-                        //     )}
-                        // />
-
-
-
-                        <StarRating
-                            disabled={false}
-                            maxStars={1}
-                            rating={0}
-                            emptyStar={'bookmark-border'}
-                            fullStar={'bookmark'}
-                            iconSet={'MaterialIcons'}
-                            starSize={24}
-                            // selectedStar={(rating) => this.onStarRatingPress()}
-                            // selectedStar={
-                            //     {rating}?(rating=1):null
-                            // }
-                            />
-                    )
-
+                    // headerLeftContainerStyle:{
+                    //     backgroundColor:"#666",
+                    //     paddingLeft:50,
+                    // },
+                    // headerLeft:() =>( 
+                    //     <button onPress={() => goBack()}>
+                    //     <MaterialIcons
+                    //         name={'navigate-before'}
+                    //         size={33}
+                    //         style={{marginLeft: 0}}
+                            
+                    //     />
+                    //     </button>
+                    // ),
+                    headerRight:() => ( <BookMarkButton/> ),
                 }}
-                
-                
             />
         </Stack.Navigator>
       );

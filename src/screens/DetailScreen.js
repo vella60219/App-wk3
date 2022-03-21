@@ -21,10 +21,7 @@ var buttonText = `BUY NOW FOR ${price}`
             <Flex flex={1} alignItems='center' bg='#fff' >
                 <Box
                     mt="8px" mb="28px" 
-                    shadowColor= '#414144'
-                    shadowOpacity= '0.1'
-                    shadowRadius= '32'
-                    //shadow={3}
+                    shadow={3}
                 >
                     <Image
                         h="300" w='210'
